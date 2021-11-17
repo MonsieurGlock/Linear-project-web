@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center{
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            display: grid;
+            padding: 50px 0px;
+            margin: 100px auto;
+            max-width: 500px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+        *{
+            margin-top: 0px;
+            padding: 0;
+        }
+        body{
+            background: #d1d1d1
+        }
+        
+        .showPass{
+            display: inline;
+            width: 100%;
+            font: 1em sans-serif;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover{
+            background-color: #fd7070;
+        }
+
+        .text-head{
+            margin-top: -50px;
+            padding: 50px 0px;
+            width: 100%;
+            background-color: darkcyan;
+            overflow: hidden;
+        }
+
+        .input-form{
+            max-width: 250px;
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class='center'>
+        <div class='text-head'><h2>ยินดีต้อนรับเข้าสู่โปรแกรมคำนวณสุดหรรษา</h2></div>
+        <div class='input-form'>
+                       <label for="cars">เลือกชนิดการเดินทาง</label>
+            <select id="transport-type" name="cars">
+              <option value="car">ทางรถ</option>
+              <option value="train">ทางราง</option>
+              <option value="boat">ทางเรือ</option>
+            </select>
+            <input id='new-case' type='text' placeholder="จำนวนผู้ติดเชื้อ">
+            <input type="submit" id='submit' value="คำนวณ"> 
+        </div>
+
+        <div class='showPass'>จะมีผู้เดินทาง : <div id='output'>ค่าประมาณ</div></div>
+
+    </div>
+    <script src='calPass.js'></script>
+</body>
+</html>
