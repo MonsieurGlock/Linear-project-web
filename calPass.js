@@ -7,17 +7,24 @@ let output = document.getElementById('output');
 subBT.addEventListener('click', calAmongOfPass)
 
 function calAmongOfPass(){
-    // console.log("Work")
     let num = Number(numInput.value);
     let outputHTML = '';
     let theType = typeTrans.value;
-    if (theType == 'car'){
-        outputHTML = (-11.7 * num) + 578656
-    }else if(theType == 'train'){
-        outputHTML = (-11.3 * num) + 457952
+    if (Number.isInteger(num) && num >= 0){
+        if (theType == 'car'){
+            outputHTML = Math.round((-11.7 * num) + 578656)
+        }else if(theType == 'train'){
+            outputHTML = Math.round((-11.3 * num) + 457952)
+        }else{
+            outputHTML = Math.round((-0.377* num) +12851)
+        }
+        if(num < 2000){
+            outputHTML += " (อาจมี Error สูง)"
+        }
     }else{
-        outputHTML = (-0.377* num) +12851
+        outputHTML = "Input Error"
     }
+    
     output.innerHTML = outputHTML;
 
 }
